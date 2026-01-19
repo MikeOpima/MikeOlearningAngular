@@ -1,12 +1,18 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+// @ts-ignore
+import { RouterOutlet } from "@angular/router";
 
+// @ts-ignore
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.html',
+  standalone: true,
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('week1Prac');
+  fName = 'Mike';
+  GOD: string = 'YHWH';
+  currentYear: number = 2026;
+  isLoggedIn: boolean = true;
+
 }
