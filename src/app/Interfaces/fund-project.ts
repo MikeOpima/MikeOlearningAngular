@@ -1,8 +1,19 @@
-export interface FundProject {
+import {Component} from '@angular/core';
+
+export interface OptionalInfo {
+  fundRisk?: any; //rate the risk they want (low->high)
+  minInvestment?: number; // minimum amount to be invested
+  managementER?: any; // %age of managing a portfolio
+}
+
+export interface MyData extends OptionalInfo {
   fundId: number;
-  fundName: string;
   fundCode: string;
+  fundName: string;
+  fundManager: string;
+  portfolioManager: string;
   signupDate: string;
   startPrice: number;
-  fundRisk?: any; //rate the risk they want (1-5)
+
 }
+
