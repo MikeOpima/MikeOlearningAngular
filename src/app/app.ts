@@ -2,12 +2,16 @@ import { Component, signal } from '@angular/core';
 // @ts-ignore
 import { RouterOutlet } from "@angular/router";
 import {MyData} from './Interfaces/fund-project';
+import {DecimalPipe} from '@angular/common';
 
 // @ts-ignore
 @Component({
   selector: 'app-root',
   templateUrl: './app.html',
   standalone: true,
+  imports: [
+    DecimalPipe
+  ],
   styleUrl: './app.css'
 })
 export class App {
