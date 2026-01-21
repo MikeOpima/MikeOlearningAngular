@@ -1,24 +1,21 @@
 import { Component, signal } from '@angular/core';
 // @ts-ignore
 import { RouterOutlet } from "@angular/router";
-import {MyData} from './Interfaces/fund-project';
-import {DecimalPipe} from '@angular/common';
+import {MyData} from './Interfaces/my-data';
+
 
 // @ts-ignore
 @Component({
   selector: 'app-root',
   templateUrl: './app.html',
   standalone: true,
-  imports: [
-    DecimalPipe
-  ],
   styleUrl: './app.css'
 })
 export class App {
   fName = 'Mike';
   GOD: string = 'YHWH';
   currentYear: number = 2026;
-  isLoggedIn: boolean = true;
+  isLoggedIn?: boolean = true;
 
   // Initialize the array with 6 funded projects
   fundedProjects: MyData[] = [
