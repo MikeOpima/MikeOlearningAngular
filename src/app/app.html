@@ -1,57 +1,24 @@
-<h1>{{ GOD }}</h1>
-<h2>User: {{fName}}</h2>
-<p>Year: {{ currentYear }}</p>
+<div class="container">
+  <h1>{{ GOD }}</h1>
+  <h2>User: {{fName}}</h2>
+  <p>Year: {{ currentYear }}</p>
 
-<!-- fund 1-->
-<div>
-  <h3>{{ fundedProjects[0].fundName }}</h3>
-  <p>Code: {{ fundedProjects[0].fundCode }}</p>
-  <p>Fund Manager: <b>{{ fundedProjects[0].fundManager}}</b></p>
-  <p>Portfolio Manager: <b>{{ fundedProjects[0].portfolioManager}}</b></p>
-  <p>Price: ${{ fundedProjects[0].startPrice }}</p>
-</div>
+  <h2>Fund Accounts Summary</h2>
 
-<!-- fund 2-->
-<div>
-  <h3>{{ fundedProjects[1].fundName }}</h3>
-  <p>Code: {{ fundedProjects[1].fundCode }}</p>
-  <p>Fund Manager: <b>{{ fundedProjects[1].fundManager}}</b></p>
-  <p>Portfolio Manager: <b>{{ fundedProjects[1].portfolioManager}}</b></p>
-  <p>Price: ${{ fundedProjects[1].startPrice }}</p>
-</div>
+  <!-- The *ngFor directive loops through every item in your list -->
+  <div *ngFor="let fund of fundedProjects" class="fund-card">
 
-<!-- fund 3-->
-<div>
-  <h3>{{ fundedProjects[2].fundName }}</h3>
-  <p>Code: {{ fundedProjects[2].fundCode }}</p>
-  <p>Fund Manager: <b>{{ fundedProjects[2].fundManager}}</b></p>
-  <p>Portfolio Manager: <b>{{ fundedProjects[2].portfolioManager}}</b></p>
-  <p>Price: ${{ fundedProjects[2].startPrice }}</p>
-</div>
+    <!-- Display all the fund's details using the temporary variable 'fund' -->
+    <h3>{{ fund.fundName }}</h3>
+    <p>Code: {{ fund.fundCode }}</p>
+    <p>Fund Manager: <b>{{ fund.fundManager}}</b></p>
+    <p>Portfolio Manager: <b>{{ fund.portfolioManager}}</b></p>
+    <p>Price: ${{ fund.startPrice }}</p>
 
-<!-- fund 4-->
-<div>
-  <h3>{{ fundedProjects[3].fundName }}</h3>
-  <p>Code: {{ fundedProjects[3].fundCode }}</p>
-  <p>Fund Manager: <b>{{ fundedProjects[3].fundManager}}</b></p>
-  <p>Portfolio Manager: <b>{{ fundedProjects[3].portfolioManager}}</b></p>
-  <p>Price: ${{ fundedProjects[3].startPrice }}</p>
-</div>
+    <!-- The *ngIf directive checks if the current fund's price > 2000 -->
+    <div *ngIf="fund.startPrice > 2000" class="high-investment-badge">
+      HIGH INVESTMENT ACCOUNT
+    </div>
 
-<!-- fund 5-->
-<div>
-  <h3>{{ fundedProjects[4].fundName }}</h3>
-  <p>Code: {{ fundedProjects[4].fundCode }}</p>
-  <p>Fund Manager: <b>{{ fundedProjects[4].fundManager}}</b></p>
-  <p>Portfolio Manager: <b>{{ fundedProjects[4].portfolioManager}}</b></p>
-  <p>Price: ${{ fundedProjects[4].startPrice }}</p>
-</div>
-
-<!-- fund 6-->
-<div>
-  <h3>{{ fundedProjects[5].fundName }}</h3>
-  <p>Code: {{ fundedProjects[5].fundCode }}</p>
-  <p>Fund Manager: <b>{{ fundedProjects[5].fundManager}}</b></p>
-  <p>Portfolio Manager: <b>{{ fundedProjects[5].portfolioManager}}</b></p>
-  <p>Price: ${{ fundedProjects[5].startPrice }}</p>
+  </div>
 </div>

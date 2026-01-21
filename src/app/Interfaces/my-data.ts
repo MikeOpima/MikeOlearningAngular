@@ -4,7 +4,7 @@ export interface OptionalInfo {
   fundRisk?: any; //rate the risk they want (low->high)
   minInvestment?: number; // minimum amount to be invested
   managementER?: any; // %age of managing a portfolio
-  intialAmount?: any;
+  initialAmount?: any;
   targetAmount?: any;
 }
 

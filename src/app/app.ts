@@ -2,6 +2,7 @@ import { Component, signal } from '@angular/core';
 // @ts-ignore
 import { RouterOutlet } from "@angular/router";
 import {MyData} from './Interfaces/my-data';
+import {CommonModule} from '@angular/common';
 
 
 // @ts-ignore
@@ -9,7 +10,8 @@ import {MyData} from './Interfaces/my-data';
   selector: 'app-root',
   templateUrl: './app.html',
   standalone: true,
-  styleUrl: './app.css'
+  styleUrl: './app.css',
+  imports: [CommonModule]
 })
 export class App {
   fName = 'Mike';
