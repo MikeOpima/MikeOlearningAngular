@@ -1,5 +1,3 @@
-import {Component} from '@angular/core';
-
 export interface OptionalInfo {
   fundRisk?: any; //rate the risk they want (low->high)
   minInvestment?: number; // minimum amount to be invested
