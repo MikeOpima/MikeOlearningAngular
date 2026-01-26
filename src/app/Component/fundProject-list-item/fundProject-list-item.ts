@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {OptionalInfo} from '../../Interfaces/my-data';
+import {MyData} from '../../Interfaces/my-data';
 
 @Component({
   selector: 'app-fundProject-list-item',
@@ -8,5 +8,5 @@ import {OptionalInfo} from '../../Interfaces/my-data';
   styleUrl: './fundProject-list-item.css',
 })
 export class FundProjectListItem {
-  @Input() fundedProjects?: OptionalInfo;
+  @Input() fundedProjects?: MyData;
 }
