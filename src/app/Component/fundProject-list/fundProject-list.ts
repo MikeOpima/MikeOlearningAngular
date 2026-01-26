@@ -1,25 +1,16 @@
-import { Component, signal } from '@angular/core';
-
-import {MyData} from './Interfaces/my-data';
-import {CommonModule} from '@angular/common';
-import {FundProjectList} from './Component/fundProject-list/fundProject-list';
-
-
+import { Component } from '@angular/core';
+import {MyData} from '../../Interfaces/my-data';
+import {FundProjectListItem} from '../fundProject-list-item/fundProject-list-item';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.html',
-  standalone: true,
-  styleUrl: './app.css',
-  imports: [CommonModule, FundProjectList]
+  selector: 'fundProject-list',
+  imports: [
+    FundProjectListItem
+  ],
+  templateUrl: './fundProject-list.html',
+  styleUrl: './fundProject-list.css',
 })
-export class App {
-  fName = 'Mike';
-  GOD: string = 'YHWH';
-  currentYear: number = 2026;
-  isLoggedIn?: boolean = true;
-
-  // Initialize the array with 6 funded projects
+export class FundProjectList {
   fundedProjects: MyData[] = [
     {
       fundId: 1, fundCode: 'MG256', fundName: 'Jackson Park', fundManager: 'MG Asset Management Inc',
@@ -71,6 +62,28 @@ export class App {
       portfolioManager: "Zash Brothers Management",
       signupDate: "November 30, 2021",
       startPrice: 3100
-    }];
+    },
+    {
+      fundId: 7,
+      fundCode: "ZB702",
+      fundName: "Kevin Qazim",
+      fundManager: "Zash Brothers Inc",
+      portfolioManager: "Zash Brothers Management",
+      signupDate: "November 30, 2021",
+      startPrice: 2335
+    },
+    {
+      fundId: 8, fundCode: 'MG259', fundName: 'Pearl Carson', fundManager: 'MG Asset Management Inc',
+      portfolioManager: "MG Asset Management Inc",
+      signupDate: "July 23, 2024",
+      startPrice: 65090
+    },
+    {
+      fundId: 9, fundCode: 'MG245', fundName: 'Dickson Hayman', fundManager: 'MG Asset Management Inc',
+      portfolioManager: "MG Asset Management Inc",
+      signupDate: "March 08, 2022",
+      startPrice: 65090
+    },
+  ];
 
 }
