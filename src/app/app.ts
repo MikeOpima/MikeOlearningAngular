@@ -20,12 +20,16 @@ export class App {
   isLoggedIn?: boolean = true;
 
   // Initialize the array with 6 funded projects
+  // @ts-ignore
   fundedProjects: MyData[] = [
     {
       fundId: 1, fundCode: 'MG256', fundName: 'Jackson Park', fundManager: 'MG Asset Management Inc',
       portfolioManager: "MG Asset Management Inc",
       signupDate: "December 17, 2022",
-      startPrice: 650
+      startPrice: 650,
+      name: "",
+      code: "",
+      id: 0
     },
     {
       fundId: 2,
@@ -34,7 +38,10 @@ export class App {
       fundManager: "RBG Asset Management Inc",
       portfolioManager: "RBG Investments",
       signupDate: "January 17, 2008",
-      startPrice: 1200
+      startPrice: 1200,
+      name: "",
+      code: "",
+      id: 0
     },
     {
       fundId: 3,
@@ -43,7 +50,10 @@ export class App {
       fundManager: "MG Asset Management Inc",
       portfolioManager: "MG Asset Management Inc",
       signupDate: "March 08, 2011",
-      startPrice: 25000
+      startPrice: 25000,
+      name: "",
+      code: "",
+      id: 0
     },
     {
       fundId: 4,
@@ -52,7 +62,10 @@ export class App {
       fundManager: "BM Asset Management Inc",
       portfolioManager: "BM Asset Management Inc",
       signupDate: "May 08, 2011",
-      startPrice: 2500
+      startPrice: 2500,
+      name: "",
+      code: "",
+      id: 0
     },
     {
       fundId: 5,
@@ -61,7 +74,10 @@ export class App {
       fundManager: "RBG Asset Management Inc",
       portfolioManager: "RBG Investments",
       signupDate: "November 30, 2020",
-      startPrice: 30430
+      startPrice: 30430,
+      name: "",
+      code: "",
+      id: 0
     },
     {
       fundId: 6,
@@ -70,7 +86,10 @@ export class App {
       fundManager: "Zash Brothers Inc",
       portfolioManager: "Zash Brothers Management",
       signupDate: "November 30, 2021",
-      startPrice: 3100
+      startPrice: 3100,
+      name: "",
+      code: "",
+      id: 0
     }];
 
 }
