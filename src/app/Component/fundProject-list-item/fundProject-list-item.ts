@@ -8,6 +8,6 @@ import {MyData} from '../../Interfaces/my-data';
   styleUrl: './fundProject-list-item.css',
 })
 export class FundProjectListItem {
-  @Input() fundedProjects!: MyData;
+  @Input() fundedProjects?: MyData;
 
 }
