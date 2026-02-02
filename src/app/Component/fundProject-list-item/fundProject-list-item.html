@@ -1,13 +1,14 @@
 <div class="container">
 
-  <h2>Fund Accounts Summary</h2>
-  @if (fundedProjects) {
+    <div class="fund-card">
+      <h2>Fund Accounts Summary</h2>
+      @if (fundedProjects) {
+      <h3>{{ fundedProjects.fundName }}</h3>
+      <p>Code: {{ fundedProjects.fundCode }}</p>
+      <p>Fund Manager: <b>{{ fundedProjects.fundManager}}</b></p>
+      <p>Portfolio Manager: <b>{{ fundedProjects.portfolioManager}}</b></p>
+      <p>Price: ${{ fundedProjects.startPrice }}</p>
 
-
-  <h3>{{ fundedProjects.fundName }}</h3>
-  <p>Code: {{ fundedProjects.fundCode }}</p>
-  <p>Fund Manager: <b>{{ fundedProjects.fundManager}}</b></p>
-  <p>Portfolio Manager: <b>{{ fundedProjects.portfolioManager}}</b></p>
-  <p>Price: ${{ fundedProjects.startPrice }}</p>
-  }
+      }
+    </div>
 </div>

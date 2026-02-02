@@ -1,7 +1,8 @@
-<h2>Fund Accounts Summary</h2>
-@for (fund of fundedProjects ; track fund.id) {
-    <app-fundProject-list-item [fundedProjects]="fund"></app-fundProject-list-item>
-}
+<h1>Fund Accounts List</h1>
+<div class="contain">
+  @for (fund of fundedProjects ; track fund.id) {
+      <app-fundProject-list-item [fundedProjects]="fund"></app-fundProject-list-item>
 
-
+  }
+</div>
 

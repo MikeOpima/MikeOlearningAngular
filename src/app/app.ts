@@ -14,7 +14,4 @@ import {FundProjectList} from './Component/fundProject-list/fundProject-list';
 })
 export class App {
 
-
-  // Initialize the array with 6 funded projects
-
 }

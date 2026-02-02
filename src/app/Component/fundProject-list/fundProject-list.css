@@ -1,2 +1,18 @@
 .even {background-color: lightblue}
 .odd {background-color: rosybrown}
+
+h1 {
+  color: orange;
+  background-color: #2c3e50;
+  text-align: center;
+}
+
+.contain {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+}
