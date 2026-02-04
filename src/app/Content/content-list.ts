@@ -1,2 +1,3 @@
-export interface ContentList {
+import {MyData} from '../Interfaces/my-data';{
+
 }
