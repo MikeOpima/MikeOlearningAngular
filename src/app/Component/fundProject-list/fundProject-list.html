@@ -1,6 +1,6 @@
 <h1>Fund Accounts List</h1>
 <div class="contain">
-  @for (fund of fundedProjects ; track fund.id) {
+  @for (fund of fundProjectList ; track fund.fundId) {
       <app-fundProject-list-item [fundedProjects]="fund"></app-fundProject-list-item>
 
   }

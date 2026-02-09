@@ -1,3 +1,3 @@
-import {MyData} from '../Interfaces/my-data';{
+import {FundData} from '../Interfaces/fund-data';{
 
 }

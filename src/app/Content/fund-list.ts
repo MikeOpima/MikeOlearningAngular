@@ -1,6 +1,7 @@
 import {FundProjectList} from '../Component/fundProject-list/fundProject-list';
+import {FundData} from '../Interfaces/fund-data';
 
-export const fundProjectList: FundProjectList[] = [
+export const fundProjectList: FundData[] = [
   {
     fundId: 1, fundCode: 'MG256', fundName: 'Jackson Park', fundManager: 'MG Asset Management Inc',
     portfolioManager: "MG Asset Management Inc", signupDate: "December 17, 2022", startPrice: 650,
