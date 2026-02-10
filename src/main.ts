@@ -4,12 +4,15 @@ import { App } from './app/app';
 import {provideRouter, Routes} from '@angular/router';
 import {FundProjectList} from './app/Component/fundProject-list/fundProject-list';
 import {FundProjectListItem} from './app/Component/fundProject-list-item/fundProject-list-item';
+import {ModifyListItemComponent} from './app/Component/modify-list-item.component/modify-list-item.component';
+import {PageNotFoundComponent} from './app/Component/page-not-found.component/page-not-found.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/funds', pathMatch: 'full'},
   {path: 'funds', component: FundProjectList},
   {path: 'funds', component: FundProjectListItem},
-  // {path: 'modify-funds', component: ModifyFundProjectList},
+  {path: 'modify-funds', component: ModifyListItemComponent},
+  {path: '**', component: PageNotFoundComponent},
 ];
 bootstrapApplication(App, {
   providers: [provideRouter(routes)]

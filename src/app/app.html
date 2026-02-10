@@ -1,27 +1,18 @@
-<!--<div class="container">
-  <h1>{{ GOD }}</h1>
-  <h2>User: {{fName}}</h2>
-  <p>Year: {{ currentYear }}</p>
+<!-- Future Nav Bar -->
 
-  <h2>Fund Accounts Summary</h2>
+<div class="nav-bar">
+  <nav>
+    <a routerLink="/funds" routerLinkActive="active">Fund List</a>
+    <a routerLink="/funds" routerLinkActive="active">Modify Fund List</a>
+  </nav>
+</div>
 
-  The *ngFor directive loops through every item in your list
-  <div *ngFor="let fund of fundedProjects" class="fund-card">
+<router-outlet></router-outlet>
 
-   Display all the fund's details using the temporary variable 'fund'
-    <h3>{{ fund.fundName }}</h3>
-    <p>Code: {{ fund.fundCode }}</p>
-    <p>Fund Manager: <b>{{ fund.fundManager}}</b></p>
-    <p>Portfolio Manager: <b>{{ fund.portfolioManager}}</b></p>
-    <p>Price: ${{ fund.startPrice }}</p>
+<!-- Component Links -->
+<!--<div>-->
+<!--  <app-fundProject-list-item></app-fundProject-list-item>-->
 
-The *ngIf directive checks if the current fund's price > 2000
-    <div *ngIf="fund.startPrice > 2000" class="high-investment-badge">
-      HIGH INVESTMENT ACCOUNT
-    </div>
+<!--  <fundProject-list></fundProject-list>-->
+<!--</div>-->
 
-  </div>
-</div>-->
-<app-fundProject-list-item></app-fundProject-list-item>
-
-<fundProject-list></fundProject-list>

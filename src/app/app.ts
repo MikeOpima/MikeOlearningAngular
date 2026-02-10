@@ -6,6 +6,7 @@ import {FundProjectListItem} from './Component/fundProject-list-item/fundProject
 import {fundProjectList} from './Content/fund-list';
 import {FundService} from './Services/fund-service';
 import {FundData} from './Interfaces/fund-data';
+import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
 
 
 
@@ -14,7 +15,7 @@ import {FundData} from './Interfaces/fund-data';
   templateUrl: './app.html',
   standalone: true,
   styleUrl: './app.css',
-  imports: [CommonModule, FundProjectListItem, FundProjectList]
+  imports: [CommonModule, FundProjectListItem, FundProjectList, RouterLink, RouterLinkActive, RouterOutlet]
 })
 export class App {
 
