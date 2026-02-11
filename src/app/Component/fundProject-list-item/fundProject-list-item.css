@@ -59,3 +59,12 @@ ng-container {
   color: #111827;
 }
 
+img {
+  width: 180px;
+  height: 180px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 5px;
+  justify-content: left;
+}
+

@@ -7,6 +7,7 @@ export interface FundData {
   portfolioManager: string;
   signupDate: string;
   startPrice: number;
+  imgLink?: string;
 
 }
 
