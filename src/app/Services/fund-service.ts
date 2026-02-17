@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+//import mock data
 import { FundData } from '../Interfaces/fund-data';
+import { Observable, of } from 'rxjs';
 import { fundProjectList } from '../Content/fund-list';
 
 @Injectable({
@@ -19,9 +20,8 @@ export class FundService {
 
   // READ: Get fund by ID
   getFundById(id: number): Observable<FundData | undefined> {
-    // @ts-ignore    <<<-- fixed in a @ts-ignore here sir i know you don't encourage it
-    const fund = this.fundProjects.find(fundProjectList => fund.id === fundId);
-    return of(fund);
+    const fundProjectList = this.fundProjects.find(fundProjectList => fundProjectList.fundId === id);
+    return of(fundProjectList);
   }
 
   // CREATE: Add new fund project
@@ -52,6 +52,8 @@ export class FundService {
   }
 
   // read on singlr fun project
-
+  generateNewId() : number {
+    return this.fundProjects.length > 0 ? Math.max(...this.fundProjects.map(fundProjectList => fundProjectList.fundId) ) +1 : 1;
+  }
 
 }

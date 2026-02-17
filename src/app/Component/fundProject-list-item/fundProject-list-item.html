@@ -11,6 +11,11 @@
         <p>Price: <b>${{ fundedProjects.startPrice }}</b></p>
 
         <img src= "{{fundedProjects.imgLink}}" >
+        <br>
+        <div class="item-button">
+          <a routerLink="/modify-funds" routerLinkActive="active" class="item-button">Edit</a>
+          <a href="form.component.html" class="item-button">Delete</a>
+        </div>
 
 <!--        @if (fundedProjects?.imgLink){-->
 <!--          -->

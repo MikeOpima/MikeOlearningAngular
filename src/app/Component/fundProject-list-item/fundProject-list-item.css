@@ -68,3 +68,36 @@ img {
   justify-content: left;
 }
 
+.item-button {
+  display: inline-block;
+  padding: 8px 16px;
+  margin-right: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Edit Button - Professional Blue */
+.item-button:first-of-type {
+  background-color: #1f4e79;
+  color: #ffffff;
+}
+
+.item-button:first-of-type:hover {
+  background-color: #163a59;
+}
+
+/* Delete Button - Risk Red Outline */
+.item-button:last-of-type {
+  background-color: white;
+}
+
+.item-button:last-of-type:hover {
+  background-color: #b02a37;
+  color: #ffffff;
+}
+
+
+

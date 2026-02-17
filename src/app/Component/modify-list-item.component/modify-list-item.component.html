@@ -1,1 +1,32 @@
-<p>modify-list-item.component works!</p>
+<!--<p>modify-list-item.component works!</p>-->
+<h1>Modifiy a Fund</h1>
+
+<form [formGroup]="fundProjectsForm"   (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="fundId">Fund ID </label>
+    <input type="number" id="fundId" name="fundId" formControlName="fundId" />
+  </div>
+  <div class="form-group">
+    <label for="fundName">Fund Name</label>
+    <input type="text" id="fundName" name="fundName" formControlName="fundName" required />
+  </div>
+  <div class="form-group">
+    <label for="fundCode">Fund Code</label>
+    <input type="text" id="fundCode" name="fundCode" formControlName="fundCode"required />
+  </div>
+  <div class="form-group">
+    <label for="fundManager">Fund Manager</label>
+    <input type="text" id="fundManager" name="fundManager" formControlName="fundManager" required />
+  </div>
+  <div class="form-group">
+    <label for="portfolioManager">Portfolio Manager</label>
+    <input type="text" id="portfolioManager" name="portfolioManager" formControlName="portfolioManager" required />
+  </div>
+  <!-- ADD or UPDATE -->
+  <button type="submit">Submit</button>
+  <!-- Delete Button -->
+  <button type="button" (click)="onDelete()">Delete</button>
+  <!-- Back button -->
+  <button type="button" (click) = "navBackToFundList()">Back to Fund List</button>
+
+</form>

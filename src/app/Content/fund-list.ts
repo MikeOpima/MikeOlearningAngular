@@ -1,4 +1,7 @@
 import {FundProjectList} from '../Component/fundProject-list/fundProject-list';
+
+// aka mock-data.ts
+
 import {FundData} from '../Interfaces/fund-data';
 
 export const fundProjectList: FundData[] = [
