@@ -14,6 +14,7 @@ import {FundService} from '../../Services/fund-service';
 export class FundProjectList implements OnInit {
    fundProjectList: FundData[] = [];
   constructor(private fundService: FundService) {
+
   }
 
 
@@ -26,6 +27,8 @@ export class FundProjectList implements OnInit {
     })
 
   }
-
-
+  selectedFundProject?: FundData;
+  selectFundProject(selectedFundProject: FundData) {
+    this.selectedFundProject = selectedFundProject;
+  }
 }

@@ -27,6 +27,7 @@ class ModifyListItemComponent implements OnInit {
       fundName: ['', Validators.required],
       fundManager: ['', Validators.required],
       portfolioManager: ['', Validators.required],
+      startPrice: ['', Validators.required],
     });
   }
 

@@ -20,6 +20,10 @@ export const fundProjectList: FundData[] = [
   {
     fundId: 4, fundCode: "BM461", fundName: "Milly Morrison", fundManager: "BM Asset Management Inc",
     portfolioManager: "BM Asset Management Inc", signupDate: "May 08, 2011", startPrice: 2500, imgLink: "../app/Assets/funding-invest.jpg"
+  },
+  {
+    fundId: 5, fundCode: "BM485", fundName: "Christopher Martin", fundManager: "BM Asset Management Inc",
+    portfolioManager: "BM Asset Management Inc", signupDate: "February 08, 2011", startPrice: 200, imgLink: "../app/Assets/funding-invest.jpg"
   }
 
 ]
