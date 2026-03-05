@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 //import mock data
 import { FundData } from '../Interfaces/fund-data';
-import { Observable, of } from 'rxjs';
+import {Observable, of, throwError} from 'rxjs';
 import { fundProjectList } from '../Content/fund-list';
+import {HttpErrorResponse} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
@@ -54,6 +55,11 @@ export class FundService {
   // read on single fund project
   generateNewId() : number {
     return this.fundProjects.length > 0 ? Math.max(...this.fundProjects.map(fundProjectList => fundProjectList.fundId) ) +1 : 1;
+  }
+
+  private handleError(error: HttpErrorResponse) {
+    console.error('API error:', error);
+    return throwError(() => new Error('Server error, please try again!'));
   }
 
 }
