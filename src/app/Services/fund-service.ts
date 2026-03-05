@@ -51,7 +51,7 @@ export class FundService {
     return of(this.fundProjects);
   }
 
-  // read on singlr fun project
+  // read on single fund project
   generateNewId() : number {
     return this.fundProjects.length > 0 ? Math.max(...this.fundProjects.map(fundProjectList => fundProjectList.fundId) ) +1 : 1;
   }

@@ -57,10 +57,10 @@ class ModifyListItemComponent implements OnInit {
       console.log("ID in the modify component: ", Number(fundProjectList.fundId))
 
       if (!isNaN(Number(fundProjectList.fundId))) {
-        this.fundService.updateFundProject(fundProjectList).subscribe(() => this.router.navigate(['/fund-list']))
+        this.fundService.updateFundProject(fundProjectList).subscribe(() => this.router.navigate(['/funds']))
       } else {
         fundProjectList.fundId = this.fundService.generateNewId()
-        this.fundService.addFundProject(fundProjectList).subscribe(() => this.router.navigate(['/fund-list']))
+        this.fundService.addFundProject(fundProjectList).subscribe(() => this.router.navigate(['/funds']))
       }
     }
   }
@@ -69,11 +69,11 @@ class ModifyListItemComponent implements OnInit {
     const fundId = this.fundProjectsForm?.value.fundId
     if (fundId){
       this.fundService.deleteFundProject(fundId)
-      this.router.navigate(['/fund-list'])
+      this.router.navigate(['/funds'])
     }
   }
   navBackToFundList() {
-    this.router.navigate(['/fund-list'])
+    this.router.navigate(['/funds'])
   }
 
 }

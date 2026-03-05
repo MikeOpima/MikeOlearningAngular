@@ -7,6 +7,10 @@ import {FundProjectListItem} from './app/Component/fundProject-list-item/fundPro
 import ModifyListItemComponent from './app/Component/modify-list-item.component/modify-list-item.component';
 import {PageNotFoundComponent} from './app/Component/page-not-found.component/page-not-found.component';
 import {FormComponent} from './app/Component/form.component/form.component';
+import {provideHttpClient} from '@angular/common/http';
+import {importProvidersFrom} from '@angular/core';
+import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
+import {InMemoryDataService} from './app/Services/in-memory-data.service';
 
 const routes: Routes = [
   {path: '', redirectTo: '/funds', pathMatch: 'full'},
@@ -18,7 +22,11 @@ const routes: Routes = [
 
 ];
 bootstrapApplication(App, {
-  providers: [provideRouter(routes)]
+  providers: [
+    provideHttpClient(), //ensure that HTTP interceptors are properly configured
+    provideRouter(routes),
+  importProvidersFrom(HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {delay: 1000}))  // import providers dynamically
+  ],
 }).then((err) => console.error(err));
 
 
