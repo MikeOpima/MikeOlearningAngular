@@ -15,8 +15,13 @@ import {InMemoryDataService} from './app/Services/in-memory-data.service';
 const routes: Routes = [
   {path: '', redirectTo: '/funds', pathMatch: 'full'},
   {path: 'funds', component: FundProjectList},
-  {path: 'funds', component: FundProjectListItem},
-  {path: 'modify-funds', component: ModifyListItemComponent},
+  {path: 'funds/:fundId',
+  loadComponent: () => import('./app/Component/fundProject-list-item/fundProject-list-item').then(m => m.FundProjectListItem)}, //lazy loaded
+  {path: 'modify-fund',
+  loadComponent: () => import('./app/Component/modify-list-item.component/modify-list-item.component').then(m => m.default)},
+  {path: '**',
+  loadComponent: () =>
+  import('./app/Component/page-not-found.component/page-not-found.component').then(m => m.PageNotFoundComponent)},
   {path: 'form', component: FormComponent},
   {path: '**', component: PageNotFoundComponent},
 

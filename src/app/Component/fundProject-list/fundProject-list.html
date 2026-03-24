@@ -1,8 +1,41 @@
-<h1>Fund Accounts List</h1>
-<div class="contain">
-  @for (fund of fundProjectList ; track fund.fundId) {
-      <app-fundProject-list-item [fundedProjects]="fund"></app-fundProject-list-item>
+<!doctypeHTML>
 
-  }
+<div class="contain">
+  <h2> Fund List</h2>
+  <table>
+    <thead>
+    <tr>
+      <th>Fund Id</th>
+      <th>Full Name</th>
+      <th>Fund Code</th>
+
+      <th>Fund Manager</th>
+      <th>Portfolio Manager</th>
+      <th>Book Value</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let funds of fundList" [routerLink]="['/funds',funds.fundId]">
+      <td>{{funds.fundId}}</td>
+      // @ts-ignore
+      <td>{{funds | Fname}}</td>
+
+      <td>{{funds.fundManager}}</td>
+      <td>{{funds.startPrice | currency: 'CAD': "symbol-narrow"}}</td> <!-- currency pipe -->
+
+    </tr>
+    </tbody>
+  </table>
 </div>
+
+  <div *ngIf="error" class="error">{{error}}</div>
+
+
+<!--<h1>Fund Accounts List</h1>-->
+<!--<div class="contain">-->
+<!--  @for (fund of fundProjectList ; track fund.fundId) {-->
+<!--      <app-fundProject-list-item [fundedProjects]="fund"></app-fundProject-list-item>-->
+
+<!--  }-->
+<!--</div>-->
 

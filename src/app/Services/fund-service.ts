@@ -1,60 +1,52 @@
 import { Injectable } from '@angular/core';
 //import mock data
-import { FundData } from '../Interfaces/fund-data';
-import {Observable, of, throwError} from 'rxjs';
-
+import { fundList } from '../Interfaces/mock-funds';
+import {catchError, Observable, throwError} from 'rxjs';
+import {FundData} from '../Interfaces/fund-data';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
+
 
 @Injectable({
   providedIn: 'root',
 })
 export class FundService {
-   private apiUrl: 'api/students';
-   private fundList: FundData[] = fundProjectList;
+   // @ts-ignore
+  private apiUrl: 'api/funds';
+   private funds: FundData[] = fundList;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   // READ: Get all fund projects
   getFundProjects(): Observable<FundData[]> {
-    return of(this.fundList);
+    return this.http.get<FundData[]>(this.apiUrl).pipe(catchError(this.handleError));
   }
 
   // READ: Get fund by ID
-  getFundById(id: number): Observable<FundData | undefined> {
-    const fundProjectList = this.fundList.find(fundProjectList => fundProjectList.fundId === id);
-    return of(fundProjectList);
+  getFundById(id: number): Observable<FundData> {
+    return this.http.get<FundData>(`${this.apiUrl}/${id}`).pipe(catchError(this.handleError));
   }
 
   // CREATE: Add new fund project
-  addFundProject(newFundProject: FundData): Observable<FundData[]> {
-    this.fundList.push(newFundProject);
-    return of(this.fundList);
+  addFundProject(fundProject: FundData): Observable<FundData[]> {
+    fundProject.fundId = this.generateNewId();
+    return this.http.post<FundData[]>(this.apiUrl, fundProject).pipe(catchError(this.handleError));
   }
 
   // UPDATE: Update existing fund project
-  updateFundProject(updatedFundProject: FundData): Observable<FundData[]> {
-    const index = this.fundList.findIndex(
-      fundProjectList => fundProjectList.fundId === updatedFundProject.fundId
-    );
-
-    if (index !== -1) {
-      this.fundList[index] = updatedFundProject;
-    }
-
-    return of(this.fundList);
+  updateFundProject(fundProject: FundData): Observable<FundData[]> {
+    const url = `${this.apiUrl}/${fundProject.fundId}`;
+    return this.http.post<FundData[]>(this.apiUrl, fundProject).pipe(catchError(this.handleError));
   }
 
   // DELETE: Remove fund by ID
-  deleteFundProject(id: number): Observable<FundData[]> {
-    this.fundList = this.fundList.filter(
-      fundProjectList => fundProjectList.fundId !== id
-    );
-    return of(this.fundList);
+  deleteFundProject(id: number): Observable<{}> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.delete(url).pipe(catchError(this.handleError));
   }
 
   // read on single fund project
   generateNewId() : number {
-    return this.fundList.length > 0 ? Math.max(...this.fundList.map(fundProjectList => fundProjectList.fundId) ) +1 : 1;
+    return this.funds.length > 0 ? Math.max(...this.funds.map(fundProjectList => fundProjectList.fundId) ) +1 : 1;
   }
 
   private handleError(error: HttpErrorResponse) {

@@ -1,26 +1,24 @@
-<div class="container">
+<!--<div class="container">-->
 
-    <div class="fund-card">
+    <div *ngIf="fund" class="fund-card">
       <h2>Fund Accounts Summary</h2>
-      @if (fundedProjects) {
-      <h3>{{ fundedProjects.fundName }}</h3>
-        <p>Fund Id: <b>{{fundedProjects.fundId}}</b></p>
-        <p>Code: <b>{{ fundedProjects.fundCode }}</b></p>
-        <p>Fund Manager: <b>{{ fundedProjects.fundManager}}</b></p>
-        <p>Portfolio Manager: <b>{{ fundedProjects.portfolioManager}}</b></p>
-        <p>Price: <b>${{ fundedProjects.startPrice }}</b></p>
+      <h3>{{ fund.fundName }}</h3>
+        <p>Fund Id: <b>{{fund.fundId}}</b></p>
+        <p>Code: <b>{{ fund.fundCode }}</b></p>
+        <p>Fund Manager: <b>{{ fund.fundManager}}</b></p>
+        <p>Portfolio Manager: <b>{{ fund.portfolioManager}}</b></p>
+        <p>Book Value: <b>${{ fund.startPrice | currency: 'CAD': "symbol-narrow"}}</b></p>
 
-        <img src= "{{fundedProjects.imgLink}}" >
+        <img src= "{{fund.imgLink}}" >
         <br>
         <div class="item-button">
-          <a routerLink="/modify-funds" routerLinkActive="active" class="item-button">Edit</a>
-          <a routerLink="/funds" class="item-button">Delete</a>
+          <button (click)="goBackward()" [disabled]="currentIndex === 0">Previous</button>
+          <button (click)="goForward()" [disabled]="currentIndex === fundList.length -1">Next</button>
+          <button (click)="goBack()">Back to Funds List</button>
+<!--          <a routerLink="/modify-funds" routerLinkActive="active" class="item-button">Edit</a>-->
+<!--          <a routerLink="/funds" class="item-button">Delete</a>-->
         </div>
-
-<!--        @if (fundedProjects?.imgLink){-->
-<!--          -->
-<!--        }-->
-      }
+      <div *ngIf="error" class="error">{{error}}</div>
 
     </div>
-</div>
+<!--</div>-->

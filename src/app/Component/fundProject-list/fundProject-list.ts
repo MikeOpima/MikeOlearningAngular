@@ -2,13 +2,22 @@ import {Component, OnInit} from '@angular/core';
 import {FundData} from '../../Interfaces/fund-data';
 import {FundProjectListItem} from '../fundProject-list-item/fundProject-list-item';
 import {FundService} from '../../Services/fund-service';
+import {CurrencyPipe, NgForOf, NgIf} from '@angular/common';
+import {RouterLink} from '@angular/router';
+import {fundList} from '../../Interfaces/mock-funds';
+import {Name} from '../../Pipes/name';
 
 @Component({
   selector: 'fundProject-list',
   templateUrl: './fundProject-list.html',
   styleUrl: './fundProject-list.css',
   imports: [
-    FundProjectListItem
+    FundProjectListItem,
+    NgForOf,
+    RouterLink,
+    CurrencyPipe,
+    NgIf,
+    Name
   ]
 })
 export class FundProjectList implements OnInit {
@@ -40,4 +49,5 @@ export class FundProjectList implements OnInit {
   }
 
 
+  protected readonly fundList = fundList;
 }

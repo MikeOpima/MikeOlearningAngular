@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FundData} from '../../Interfaces/fund-data';
-import {NgOptimizedImage} from '@angular/common';
+import {CurrencyPipe, NgIf, NgOptimizedImage} from '@angular/common';
 import {ActivatedRoute, Router, RouterLink, RouterLinkActive} from '@angular/router';
 import {FundService} from '../../Services/fund-service';
 
@@ -8,7 +8,9 @@ import {FundService} from '../../Services/fund-service';
   selector: 'app-fundProject-list-item',
   imports: [
     RouterLink,
-    RouterLinkActive
+    RouterLinkActive,
+    CurrencyPipe,
+    NgIf
 
   ],
   templateUrl: './fundProject-list-item.html',
