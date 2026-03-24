@@ -69,6 +69,6 @@ export class FundProjectListItem implements OnInit {
     }
   }
 
-  // @Input() fundedProjects?: FundData;
+  @Input() fundedProjects?: FundData;
 
 }

@@ -2,59 +2,59 @@ import { Injectable } from '@angular/core';
 //import mock data
 import { FundData } from '../Interfaces/fund-data';
 import {Observable, of, throwError} from 'rxjs';
-import { fundProjectList } from '../Content/fund-list';
-import {HttpErrorResponse} from '@angular/common/http';
+
+import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class FundService {
+   private apiUrl: 'api/students';
+   private fundList: FundData[] = fundProjectList;
 
-  private fundProjects: FundData[] = fundProjectList;
-
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   // READ: Get all fund projects
   getFundProjects(): Observable<FundData[]> {
-    return of(this.fundProjects);
+    return of(this.fundList);
   }
 
   // READ: Get fund by ID
   getFundById(id: number): Observable<FundData | undefined> {
-    const fundProjectList = this.fundProjects.find(fundProjectList => fundProjectList.fundId === id);
+    const fundProjectList = this.fundList.find(fundProjectList => fundProjectList.fundId === id);
     return of(fundProjectList);
   }
 
   // CREATE: Add new fund project
   addFundProject(newFundProject: FundData): Observable<FundData[]> {
-    this.fundProjects.push(newFundProject);
-    return of(this.fundProjects);
+    this.fundList.push(newFundProject);
+    return of(this.fundList);
   }
 
   // UPDATE: Update existing fund project
   updateFundProject(updatedFundProject: FundData): Observable<FundData[]> {
-    const index = this.fundProjects.findIndex(
+    const index = this.fundList.findIndex(
       fundProjectList => fundProjectList.fundId === updatedFundProject.fundId
     );
 
     if (index !== -1) {
-      this.fundProjects[index] = updatedFundProject;
+      this.fundList[index] = updatedFundProject;
     }
 
-    return of(this.fundProjects);
+    return of(this.fundList);
   }
 
   // DELETE: Remove fund by ID
   deleteFundProject(id: number): Observable<FundData[]> {
-    this.fundProjects = this.fundProjects.filter(
+    this.fundList = this.fundList.filter(
       fundProjectList => fundProjectList.fundId !== id
     );
-    return of(this.fundProjects);
+    return of(this.fundList);
   }
 
   // read on single fund project
   generateNewId() : number {
-    return this.fundProjects.length > 0 ? Math.max(...this.fundProjects.map(fundProjectList => fundProjectList.fundId) ) +1 : 1;
+    return this.fundList.length > 0 ? Math.max(...this.fundList.map(fundProjectList => fundProjectList.fundId) ) +1 : 1;
   }
 
   private handleError(error: HttpErrorResponse) {

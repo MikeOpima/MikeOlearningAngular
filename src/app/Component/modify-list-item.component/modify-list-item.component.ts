@@ -3,7 +3,7 @@ import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/
 import {FundData} from '../../Interfaces/fund-data';
 import {FundService} from '../../Services/fund-service';
 import {ActivatedRoute, Router} from '@angular/router';
-import {fundProjectList} from '../../Content/fund-list';
+
 @Component({
   selector: 'app-modify-list-item.component',
   imports: [
