@@ -7,8 +7,8 @@ import {FundService} from '../../Services/fund-service';
 @Component({
   selector: 'app-fundProject-list-item',
   imports: [
-    RouterLink,
-    RouterLinkActive,
+    // RouterLink,
+    // RouterLinkActive,
     CurrencyPipe,
     NgIf
 

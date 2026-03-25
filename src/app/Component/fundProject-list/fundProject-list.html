@@ -17,8 +17,7 @@
     <tbody>
     <tr *ngFor="let funds of fundList" [routerLink]="['/funds',funds.fundId]">
       <td>{{funds.fundId}}</td>
-      // @ts-ignore
-      <td>{{funds | Fname}}</td>
+<!--      <td>{{funds | summary}}</td>-->
 
       <td>{{funds.fundManager}}</td>
       <td>{{funds.startPrice | currency: 'CAD': "symbol-narrow"}}</td> <!-- currency pipe -->

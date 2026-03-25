@@ -22,8 +22,6 @@ const routes: Routes = [
   {path: '**',
   loadComponent: () =>
   import('./app/Component/page-not-found.component/page-not-found.component').then(m => m.PageNotFoundComponent)},
-  {path: 'form', component: FormComponent},
-  {path: '**', component: PageNotFoundComponent},
 
 ];
 bootstrapApplication(App, {

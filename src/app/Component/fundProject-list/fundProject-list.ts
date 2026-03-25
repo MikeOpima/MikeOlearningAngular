@@ -6,6 +6,7 @@ import {CurrencyPipe, NgForOf, NgIf} from '@angular/common';
 import {RouterLink} from '@angular/router';
 import {fundList} from '../../Interfaces/mock-funds';
 import {Name} from '../../Pipes/name';
+import {SummaryPipe} from '../../Pipes/summary-pipe';
 
 @Component({
   selector: 'fundProject-list',
@@ -17,7 +18,8 @@ import {Name} from '../../Pipes/name';
     RouterLink,
     CurrencyPipe,
     NgIf,
-    Name
+    Name,
+    SummaryPipe
   ]
 })
 export class FundProjectList implements OnInit {
