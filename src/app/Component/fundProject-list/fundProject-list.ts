@@ -2,10 +2,10 @@ import {Component, OnInit} from '@angular/core';
 import {FundData} from '../../Interfaces/fund-data';
 import {FundProjectListItem} from '../fundProject-list-item/fundProject-list-item';
 import {FundService} from '../../Services/fund-service';
-import {CurrencyPipe, NgForOf, NgIf} from '@angular/common';
+import {CurrencyPipe, LowerCasePipe, NgForOf, NgIf, UpperCasePipe} from '@angular/common';
 import {RouterLink} from '@angular/router';
 import {fundList} from '../../Interfaces/mock-funds';
-import {Name} from '../../Pipes/name';
+import {NamePipe} from '../../Pipes/name.pipe';
 import {SummaryPipe} from '../../Pipes/summary-pipe';
 
 @Component({
@@ -18,8 +18,10 @@ import {SummaryPipe} from '../../Pipes/summary-pipe';
     RouterLink,
     CurrencyPipe,
     NgIf,
-    Name,
-    SummaryPipe
+    NamePipe,
+    SummaryPipe,
+    UpperCasePipe,
+    LowerCasePipe
   ]
 })
 export class FundProjectList implements OnInit {

@@ -5,9 +5,8 @@ import { FundData } from '../Interfaces/fund-data';
   name: 'Fname',
   standalone: true
 })
-export class Name implements PipeTransform {
-  transform(fundData: FundData[]): string {
-    // @ts-ignore
-    return `${fundData.fundData}`;
+export class NamePipe implements PipeTransform {
+  transform(fundData: FundData): string {
+    return `${fundData.fundName}`;
 }
 }

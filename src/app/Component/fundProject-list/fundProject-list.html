@@ -16,11 +16,13 @@
     </thead>
     <tbody>
     <tr *ngFor="let funds of fundList" [routerLink]="['/funds',funds.fundId]">
-      <td>{{funds.fundId}}</td>
-<!--      <td>{{funds | summary}}</td>-->
+      <td>{{funds.fundId }}</td>
+      <td>{{funds | Fname | uppercase}}</td>  <!-- custom pipe related to name.pipe.ts-->
+      <td>{{funds.fundCode | lowercase}}</td>
 
       <td>{{funds.fundManager}}</td>
-      <td>{{funds.startPrice | currency: 'CAD': "symbol-narrow"}}</td> <!-- currency pipe -->
+      <td>{{funds.portfolioManager}}</td>
+      <td>{{funds.startPrice | currency : 'CAD': "symbol-narrow"}}</td> <!-- currency pipe -->
 
     </tr>
     </tbody>

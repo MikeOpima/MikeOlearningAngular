@@ -1,32 +1,86 @@
-.even {
-  background-color: lightblue;
+/* Base styling */
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background-color: #f5f7fa;
+  margin: 0;
+  padding: 0;
+  color: #2c3e50;
 }
 
-.odd {
-  background-color: rosybrown;
-}
-
-h1 {
-  color: royalblue;
-  /*background-color: #2c3e50;*/
-  text-align: center;
-  padding: 12px;
-  margin-bottom: 24px;
-  border-radius: 8px;
-}
-
+/* Container */
 .contain {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;   /* vertical centering */
-  align-items: center;       /* horizontal centering */
-  gap: 12px;                 /* space between items */
-  padding: 24px;
-  max-width: 500px;
-  margin: 0 auto;            /* center container on page */
-  border-radius: 12px;
-  border: 1px solid lightgray;
-  background-color: #ffffff;
-  /*text-align: center;        !* center text inside *!*/
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  width: 90%;
+  max-width: 1100px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Title */
+h2 {
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #1a2b49;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+/* Header */
+thead {
+  background: #1a2b49;
+  color: #ffffff;
+}
+
+th {
+  padding: 12px;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+/* Rows */
+td {
+  padding: 12px;
+  border-bottom: 1px solid #e6e9ef;
+}
+
+/* Subtle row hover */
+tbody tr {
+  transition: all 0.2s ease-in-out;
+}
+
+tbody tr:hover {
+  background-color: #eef3fb;
+  transform: scale(1.01);
+  cursor: pointer;
+}
+
+/* Zebra striping (light, professional) */
+tbody tr:nth-child(even) {
+  background-color: #fafbfc;
+}
+
+/* Currency column emphasis */
+td:last-child {
+  font-weight: 600;
+  color: #1a7f37; /* green = positive finance feel */
+}
+
+/* Error message */
+.error {
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 12px;
+  background: #ffecec;
+  color: #b00020;
+  border-left: 4px solid #b00020;
+  border-radius: 5px;
+  font-size: 14px;
 }

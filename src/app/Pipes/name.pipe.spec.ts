@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { Name } from './name';
+import { NamePipe } from './name.pipe';
 
-describe('Name', () => {
-  let service: Name;
+describe('NamePipe', () => {
+  let service: NamePipe;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(Name);
+    service = TestBed.inject(NamePipe);
   });
 
   it('should be created', () => {
