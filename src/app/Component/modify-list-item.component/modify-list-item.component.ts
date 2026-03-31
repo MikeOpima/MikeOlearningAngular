@@ -14,7 +14,8 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 class ModifyListItemComponent implements OnInit {
   fundProjectsForm : FormGroup;
-  fundProjectList: FundData[] | undefined;
+  fund: FundData[] | undefined;
+  error: string | null = null;
   constructor(
     private formBuilder: FormBuilder,
     private fundService: FundService,

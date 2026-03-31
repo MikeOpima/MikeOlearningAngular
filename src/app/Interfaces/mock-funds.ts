@@ -20,6 +20,14 @@ export const  fundList: FundData[] = [
   {
     fundId: 5, fundCode: "BM485", fundName: "Christopher Martin", fundManager: "BM Asset Management Inc",
     portfolioManager: "BM Asset Management Inc", signupDate: "February 08, 2011", startPrice: 256.86, imgLink: "../app/Assets/funding-invest.jpg"
+  },
+  {
+    fundId: 6, fundCode: "MG365", fundName: "Zachary Thompson", fundManager: "MG Asset Management Inc",
+    portfolioManager: "MG Asset Management Inc", signupDate: "March 08, 2015", startPrice: 203029.86, imgLink: "../app/Assets/funding-invest.jpg"
+  },
+  {
+    fundId: 7, fundCode: "MG204", fundName: "Carls Miguel", fundManager: "MG Asset Management Inc",
+    portfolioManager: "MG Asset Management Inc", signupDate: "March 08, 2019", startPrice: 603029.86, imgLink: "../app/Assets/funding-invest.jpg"
   }
 ];
 

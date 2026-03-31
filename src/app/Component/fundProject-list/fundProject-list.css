@@ -70,7 +70,7 @@ tbody tr:nth-child(even) {
 /* Currency column emphasis */
 td:last-child {
   font-weight: 600;
-  color: #1a7f37; /* green = positive finance feel */
+  /*color: #1a7f37; !* green = positive finance feel *!*/
 }
 
 /* Error message */

@@ -11,8 +11,8 @@ import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 })
 export class FundService {
    // @ts-ignore
-  private apiUrl: 'api/funds';
-   private funds: FundData[] = fundList;
+  private apiUrl: 'api/funds';  //url to web api
+  private funds: FundData[] = fundList;
 
   constructor(private http: HttpClient) { }
 

@@ -6,20 +6,19 @@ import {CurrencyPipe, LowerCasePipe, NgForOf, NgIf, UpperCasePipe} from '@angula
 import {RouterLink} from '@angular/router';
 import {fundList} from '../../Interfaces/mock-funds';
 import {NamePipe} from '../../Pipes/name.pipe';
-import {SummaryPipe} from '../../Pipes/summary-pipe';
+
 
 @Component({
   selector: 'fundProject-list',
   templateUrl: './fundProject-list.html',
   styleUrl: './fundProject-list.css',
   imports: [
-    FundProjectListItem,
+    // FundProjectListItem,
     NgForOf,
     RouterLink,
     CurrencyPipe,
     NgIf,
     NamePipe,
-    SummaryPipe,
     UpperCasePipe,
     LowerCasePipe
   ]
