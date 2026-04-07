@@ -79,5 +79,3 @@ class ModifyListItemComponent implements OnInit {
 
 }
 
-export default ModifyListItemComponent
-

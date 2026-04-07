@@ -14,7 +14,9 @@ const routes: Routes = [
   {path: 'funds/:fundId',
   loadComponent: () => import('./app/Component/fundProject-list-item/fundProject-list-item').then(m => m.FundProjectListItem)}, //lazy loaded
   {path: 'modify-fund',
-  loadComponent: () => import('./app/Component/modify-list-item.component/modify-list-item.component').then(m => m.default)},
+    loadComponent: () => import('./app/Component/modify-list-item.component/modify-list-item.component').then(m => m)},
+  {path: 'modify-fund',
+  loadComponent: () => import('./app/Component/modify-list-item.component/modify-list-item.component').then(m => m.ModifyListItem)},
   {path: '**',
   loadComponent: () =>
   import('./app/Component/page-not-found.component/page-not-found.component').then(m => m.PageNotFoundComponent)},
