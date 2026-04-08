@@ -3,6 +3,7 @@ import {FundData} from '../../Interfaces/fund-data';
 import {CurrencyPipe, NgIf, NgOptimizedImage} from '@angular/common';
 import {ActivatedRoute, Router, RouterLink, RouterLinkActive} from '@angular/router';
 import {FundService} from '../../Services/fund-service';
+import {MatSlider, MatSliderThumb} from '@angular/material/slider';
 
 @Component({
   selector: 'app-fundProject-list-item',
@@ -10,7 +11,9 @@ import {FundService} from '../../Services/fund-service';
     // RouterLink,
     // RouterLinkActive,
     CurrencyPipe,
-    NgIf
+    NgIf,
+    MatSlider,
+    MatSliderThumb
 
   ],
   templateUrl: './fundProject-list-item.html',

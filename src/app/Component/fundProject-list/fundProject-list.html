@@ -1,32 +1,61 @@
 <!doctypeHTML>
 
 <div class="contain">
-  <h2> Fund List</h2>
-  <table>
-    <thead>
-    <tr>
-      <th>Fund Id</th>
-      <th>Full Name</th>
-      <th>Fund Code</th>
+  <div class="contain">
+    <h2>Fund List</h2>
 
-      <th>Fund Manager</th>
-      <th>Portfolio Manager</th>
-      <th>Book Value</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let funds of fundList" [routerLink]="['/funds',funds.fundId]">
-      <td>{{funds.fundId }}</td>
-      <td>{{funds | Fname | uppercase}}</td>  <!-- custom pipe related to name.pipe.ts-->
-      <td>{{funds.fundCode | lowercase}}</td>
+    <table mat-table [dataSource]="fundList" matSort class="mat-elevation-z8">
 
-      <td>{{funds.fundManager}}</td>
-      <td>{{funds.portfolioManager}}</td>
-      <td>{{funds.startPrice | currency : 'CAD': "symbol-narrow"}}</td> <!-- currency pipe -->
+      <!-- Fund ID -->
+      <ng-container matColumnDef="fundId">
+        <th mat-header-cell *matHeaderCellDef> Fund Id </th>
+        <td mat-cell *matCellDef="let fund"> {{fund.fundId}} </td>
+      </ng-container>
 
-    </tr>
-    </tbody>
-  </table>
+      <!-- Full Name -->
+      <ng-container matColumnDef="fullName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Full Name </th>
+        <td mat-cell *matCellDef="let fund">
+          {{fund | Fname | uppercase}}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="fundCode">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Fund Code </th>
+        <td mat-cell *matCellDef="let fund">
+          {{fund.fundCode | lowercase}}
+        </td>
+      </ng-container>
+
+      <!-- Fund Manager -->
+      <ng-container matColumnDef="fundManager">
+        <th mat-header-cell *matHeaderCellDef> Fund Manager </th>
+        <td mat-cell *matCellDef="let fund"> {{fund.fundManager}} </td>
+      </ng-container>
+
+      <!-- Portfolio Manager -->
+      <ng-container matColumnDef="portfolioManager">
+        <th mat-header-cell *matHeaderCellDef> Portfolio Manager </th>
+        <td mat-cell *matCellDef="let fund"> {{fund.portfolioManager}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="startPrice">
+        <th mat-header-cell *matHeaderCellDef> Book Value </th>
+        <td mat-cell *matCellDef="let fund">
+          {{fund.startPrice | currency:'CAD':'symbol-narrow'}}
+        </td>
+      </ng-container>
+
+      <!-- Rows -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr
+        mat-row
+        *matRowDef="let row; columns: displayedColumns;"
+        [routerLink]="['/funds', row.fundId]">
+      </tr>
+
+    </table>
+  </div>
 </div>
 
   <div *ngIf="error" class="error">{{error}}</div>

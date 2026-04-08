@@ -15,8 +15,9 @@
           <button (click)="goBackward()" [disabled]="currentIndex === 0">Previous</button>
           <button (click)="goForward()" [disabled]="currentIndex === fundList.length -1">Next</button>
           <button (click)="goBack()">Back to Funds List</button>
-<!--          <a routerLink="/modify-funds" routerLinkActive="active" class="item-button">Edit</a>-->
-<!--          <a routerLink="/funds" class="item-button">Delete</a>-->
+          <mat-slider min="1" max="5" step="0.5">
+            <input matSliderThumb value="1.5">
+          </mat-slider>
         </div>
       <div *ngIf="error" class="error">{{error}}</div>
 

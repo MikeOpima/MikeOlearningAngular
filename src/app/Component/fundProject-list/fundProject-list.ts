@@ -6,6 +6,15 @@ import {CurrencyPipe, LowerCasePipe, NgForOf, NgIf, UpperCasePipe} from '@angula
 import {RouterLink} from '@angular/router';
 import {fundList} from '../../Interfaces/mock-funds';
 import {NamePipe} from '../../Pipes/name.pipe';
+import {
+  MatCell,
+  MatCellDef,
+  MatColumnDef,
+  MatHeaderCell,
+  MatHeaderCellDef, MatHeaderRow,
+  MatHeaderRowDef, MatRow, MatRowDef,
+  MatTable
+} from '@angular/material/table';
 
 
 @Component({
@@ -20,7 +29,17 @@ import {NamePipe} from '../../Pipes/name.pipe';
     NgIf,
     NamePipe,
     UpperCasePipe,
-    LowerCasePipe
+    LowerCasePipe,
+    MatTable,
+    MatColumnDef,
+    MatHeaderCell,
+    MatCell,
+    MatHeaderCellDef,
+    MatCellDef,
+    MatHeaderRowDef,
+    MatHeaderRow,
+    MatRow,
+    MatRowDef
   ]
 })
 export class FundProjectList implements OnInit {
@@ -28,7 +47,7 @@ export class FundProjectList implements OnInit {
   displayedColumns: string[] = ['fundName','fundId', 'fundCode','fundManager', 'portfolioManager'];
 
    fundProjectList: FundData[] = [];
-   
+
    error: string | null = null;    // var to hold an error message
   constructor(private fundService: FundService) {
     // constructor primarily used for dependency injection
