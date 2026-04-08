@@ -3,11 +3,17 @@ import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/
 import {FundData} from '../../Interfaces/fund-data';
 import {FundService} from '../../Services/fund-service';
 import {ActivatedRoute, Router} from '@angular/router';
+import {MatLabel} from '@angular/material/input';
+import {MatButton} from '@angular/material/button';
+import {MatTooltip} from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-modify-list-item.component',
   imports: [
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatLabel,
+    MatButton,
+    MatTooltip
   ],
   templateUrl: './modify-list-item.component.html',
   styleUrl: './modify-list-item.component.css',

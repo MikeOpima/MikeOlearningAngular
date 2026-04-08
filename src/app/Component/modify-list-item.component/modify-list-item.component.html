@@ -2,10 +2,12 @@
 <h1>Modifiy a Fund</h1>
 
 <form [formGroup]="fundProjectsForm"   (ngSubmit)="onSubmit()">
-  <div class="form-group">
-    <label for="fundId">Fund ID </label>
-    <input type="number" id="fundId" name="fundId" formControlName="fundId" />
-  </div>
+  <mat-form-field class="form-width">
+    <div class="form-group">
+      <mat-label for="fundId">Fund ID </mat-label>
+      <input type="number" id="fundId" name="fundId" formControlName="fundId" />
+    </div>
+  </mat-form-field>
   <div class="form-group">
     <label for="fundName">Fund NamePipe</label>
     <input type="text" id="fundName" name="fundName" formControlName="fundName" required />
@@ -23,13 +25,21 @@
     <input type="text" id="portfolioManager" name="portfolioManager" formControlName="portfolioManager" required />
   </div>
   <div class="form-group">
-    <label for="startPrice">Start Price </label>
-    <input type="number" id="startPrice" name="startPrice" formControlName="startPrice" />
+    <mat-form-field>
+    <mat-label for="startPrice">Start Price </mat-label>
+      <input type="number" id="startPrice" name="startPrice" formControlName="startPrice" />
+    </mat-form-field>
   </div>
   <!-- ADD or UPDATE -->
-  <button type="submit">Submit</button>
+  <button matButton="elevated"
+          matTooltip="Submit info"
+          aria-label="Button displays tooltip when focused"
+    type="submit">Submit</button>
   <!-- TO delete a fund -->
-  <button type="button" (click)="onDelete()">Delete</button>
+  <button matButton="elevated"
+          matTooltip="Once deleted cannot be retrieved"
+          aria-label="Display delete info"
+    type="button" (click)="onDelete()">Delete</button>
   <!-- Back button to Fund List page -->
   <button type="button" (click) = "navBackToFundList()">Back to Fund List</button>
 

@@ -1,11 +1,16 @@
 <!-- Future Nav Bar -->
 
-<div class="nav-bar">
+<mat-toolbar color="primary" class="nav-bar">
+  <button mat-button>Menu</button>
+
+  <span class="spacer"></span>
+
   <nav>
-    <a routerLink="/funds" routerLinkActive="active">Fund List</a>
-    <a routerLink="/modify-funds" routerLinkActive="active">Modify Fund List</a>
+    <a mat-button routerLink="/funds" routerLinkActive="active">Fund List</a>
+    <a mat-button routerLink="/modify-funds" routerLinkActive="active">Modify Fund List</a>
   </nav>
-</div>
+</mat-toolbar>
+
 
 <div class="app-container">
   <h1>{{ title }}</h1>

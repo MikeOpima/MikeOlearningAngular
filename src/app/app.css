@@ -70,3 +70,15 @@ b {
 .nav-bar a:hover {
   background-color: #34495e;
 }
+
+.nav-bar {
+  display: flex;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+nav a {
+  margin-left: 10px;
+}

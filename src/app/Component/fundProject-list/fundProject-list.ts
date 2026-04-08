@@ -26,7 +26,9 @@ import {NamePipe} from '../../Pipes/name.pipe';
 export class FundProjectList implements OnInit {
   //Placeholder values for the table
   displayedColumns: string[] = ['fundName','fundId', 'fundCode','fundManager', 'portfolioManager'];
+
    fundProjectList: FundData[] = [];
+   
    error: string | null = null;    // var to hold an error message
   constructor(private fundService: FundService) {
     // constructor primarily used for dependency injection

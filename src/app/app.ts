@@ -1,4 +1,4 @@
-import { Component, signal, OnInit } from '@angular/core';
+import {Component, signal, OnInit, NgModule} from '@angular/core';
 
 import {CommonModule} from '@angular/common';
 import {FundProjectList} from './Component/fundProject-list/fundProject-list';
@@ -7,9 +7,8 @@ import {FundProjectListItem} from './Component/fundProject-list-item/fundProject
 import {FundService} from './Services/fund-service';
 import {FundData} from './Interfaces/fund-data';
 import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
-
-
-
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatButtonModule} from '@angular/material/button';
 @Component({
   selector: 'app-root',
   templateUrl: './app.html',
@@ -17,6 +16,14 @@ import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
   styleUrl: './app.css',
   imports: [CommonModule, RouterLink, RouterLinkActive, RouterOutlet]
 })
+
+@NgModule({
+  imports: [
+    MatToolbarModule,
+    MatButtonModule
+    ]})
+
+
 export class App {
 
     // @ts-ignore
